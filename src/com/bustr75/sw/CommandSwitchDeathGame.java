@@ -21,7 +21,7 @@ public class CommandSwitchDeathGame implements CommandExecutor{
 				switch(curarg.toLowerCase()) {
 				case "help":
 					try {
-						if(args[i+1].toLowerCase() == "set") {
+						if(!(args[i+1] == null)) {
 							p.sendMessage("'MaxTime' Default:10,'RemovePlayerOnDeath' Default true, 'Verbose' Default:false, 'AutoRestart' Default:false");
 						}
 						else {
@@ -40,8 +40,12 @@ public class CommandSwitchDeathGame implements CommandExecutor{
 					p.sendMessage("Stopping");
 					PlayerSwitch.instance.tpTimer.cancelTasks(PlayerSwitch.instance);
 					return true;
-				case "Brodcast":
-					TextComponent message = new TextComponent( args[i+1] );
+				case "broadcast":
+					String mes="";
+					for(int j = i+1;j<args.length;j++) {
+						mes+=args[j]+" ";
+					}
+					TextComponent message = new TextComponent( mes );
 	    	    	message.setColor( net.md_5.bungee.api.ChatColor.GOLD );
 	    	    	message.setBold( true );
 	    	    	PlayerSwitch.instance.BroadcastToPlayers(message);
