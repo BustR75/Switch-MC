@@ -1,0 +1,8 @@
+name: PlayerSwitch
+main: com.bustr75.sw.PlayerSwitch
+version: 1.0
+api-version: 1.13
+commands:
+   sw:
+      description: Run /sw help
+      usage: /sw help

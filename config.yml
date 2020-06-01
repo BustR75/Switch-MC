@@ -1,0 +1,4 @@
+MaxTime: 10
+RemovePlayerOnDeath: true
+Verbose: true
+AutoRestart: true
